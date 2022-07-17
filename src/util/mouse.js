@@ -1,8 +1,7 @@
 import { onMounted, onUnmounted, ref } from "vue";
 
 export function useMouse() {
-
-    let mouse = {
+    const mouse = {
         position: ref([0, 0]),
     }
 
