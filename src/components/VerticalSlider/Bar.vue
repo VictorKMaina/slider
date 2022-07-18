@@ -14,25 +14,27 @@
 
 <script setup>
 import HandleVue from "./Handle.vue";
-import state from "../../util/slider.config";
-import { getElementPosition } from "../../util/slider.config";
-import { ref, onMounted } from "vue";
-import { useMouse } from "../../util/mouse";
+// import state from "./slider.config";
+import { getElementPosition } from "./utility";
+import { ref, onMounted, inject } from "vue";
+import { useMouse } from "../../mouse";
 
-// Change value based on mouse position to move handle
+const state = inject("state");
+
+// Get mouse position
 const { position } = useMouse();
 
 // Event handlers
-function onMouseDown(){
-    state.hold = true
-    state.moveHandle(position)
+function onMouseDown() {
+    state.hold = true;
+    state.moveHandle(position);
 
-    window.addEventListener('mouseup', () => state.hold = false)
-    window.addEventListener('touchend', () => state.hold = false)
+    window.addEventListener("mouseup", () => (state.hold = false));
+    window.addEventListener("touchend", () => (state.hold = false));
 }
 
-function onClick(){
-    state.moveHandle(position, false)
+function onClick() {
+    state.moveHandle(position, false);
 }
 
 // Get y position of bar

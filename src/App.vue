@@ -1,10 +1,9 @@
 <template>
-    <div class="slider-container">
-        <vertical-slider-vue v-bind="data"></vertical-slider-vue>
-    </div>
+
+<slider></slider>
+
 </template>
 
 <script setup>
-import { reactive } from "vue";
-import VerticalSliderVue from "./components/VerticalSlider/Slider.vue";
+import slider from '../dist/slider.es';
 </script>

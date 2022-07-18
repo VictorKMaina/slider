@@ -1,15 +1,21 @@
 <template>
-    <bar-vue></bar-vue>
-    <input-vue></input-vue>
+    <div class="slider-container">
+        <h1>{{ state.title }}</h1>
+        <bar-vue></bar-vue>
+        <input-vue></input-vue>
+    </div>
 </template>
 
 <script setup>
-import state from "../../util/slider.config";
 import BarVue from "./Bar.vue";
 import InputVue from "./Input.vue";
-import { computed, onMounted, watch } from "vue";
+import { watch, provide, defineProps } from "vue";
+import { createState } from "./state";
 
 const props = defineProps({
+    title: String,
+    desctription: String,
+    mapping: String,
     value: Number,
     minValue: Number,
     maxValue: Number,
@@ -19,13 +25,16 @@ const props = defineProps({
     inputStyle: {}
 });
 
-const newState = state.update(props)
+const state = createState().update(props);
+
+// Pass state down to child components
+provide("state", state);
 
 // Emit value of slider
-const emit = defineEmits(["changeValue", "somethingElse"]);
-emit("changeValue", state.value);
+const emit = defineEmits(["value", "somethingElse"]);
+emit("value", state.value);
 watch(
     () => state.value,
-    (value) => emit("changeValue", value)
+    (value) => emit("value", value)
 );
 </script>
