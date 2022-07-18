@@ -1,9 +1,14 @@
 <template>
-<div :style="{ bottom: `${position[1]}px` }" class="handle"></div>
+<div ref="handle" :style="{
+    bottom: state.handlePosition+'px',
+    ...state.handleStyle
+}" class="handle"></div>
 </template>
 
 <script setup>
 import { useMouse } from '../../util/mouse';
+import state from '../../util/slider.config';
 
-let { position } = useMouse()
+state.handlePosition = state.moveHandle(useMouse().position)
+
 </script>

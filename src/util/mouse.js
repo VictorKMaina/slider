@@ -1,6 +1,6 @@
 import { onMounted, onUnmounted, ref } from "vue";
 
-export function useMouse() {
+export function useMouse(event, onMount = true) {
     const mouse = {
         position: ref([0, 0]),
     }
@@ -11,8 +11,10 @@ export function useMouse() {
         mouse.position.value = [mouseX, mouseY]
     }
 
-    onMounted(() => window.addEventListener('mousemove', updatePosition))
-    onUnmounted(() => window.removeEventListener('mousemove', updatePosition))
+    if (onMount) {
+        onMounted(() => window.addEventListener('mousemove', updatePosition))
+        onUnmounted(() => window.removeEventListener('mousemove', updatePosition))
+    } else updatePosition(event)
 
     return mouse
 }
