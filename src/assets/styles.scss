@@ -5,10 +5,23 @@
         padding: 0;
         font-size: 16px;
     }
-
-    height: 400px;
-    width: 50px;
+    
+    width: fit-content;
     padding: 1.5em;
+    display: grid;
+    place-items: center;
+
+    div.bar {
+        height: 400px;
+        width: 20px;
+        background-color: #efefef;
+        border: 1px solid #dfdfdf;
+        border-radius: 50px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
 
     div.handle {
         width: 40px;
@@ -20,14 +33,18 @@
         border-radius: 50%;
     }
 
-    div.bar {
-        height: 400px;
-        width: 20px;
-        background-color: #efefef;
+    input.value {
+        padding: 0.75rem 1rem;
         border: 1px solid #dfdfdf;
-        border-radius: 50px;
-        position: relative;
-        display: flex;
-        justify-content: center;
+        outline: none;
+        border-radius: 10px;
+        background-color: #efefef;
+        text-align: center;
+        width: 80px;
+        transition: border 200ms;
+
+        &:focus {
+            border-color: #7f7f7f;
+        }
     }
 }

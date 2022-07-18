@@ -8,7 +8,4 @@
 <script setup>
 import { useMouse } from '../../util/mouse';
 import state from '../../util/slider.config';
-
-state.handlePosition = state.moveHandle(useMouse().position)
-
 </script>

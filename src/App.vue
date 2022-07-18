@@ -1,14 +1,10 @@
 <template>
     <div class="slider-container">
-        <vertical-slider-vue></vertical-slider-vue>
+        <vertical-slider-vue v-bind="data"></vertical-slider-vue>
     </div>
-    <p>{{ position }}</p>
 </template>
 
 <script setup>
+import { reactive } from "vue";
 import VerticalSliderVue from "./components/VerticalSlider/Slider.vue";
-import { useMouse } from "./util/mouse"
-
-let { position } = useMouse()
-
 </script>
