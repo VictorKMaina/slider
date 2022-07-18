@@ -1,3 +1,5 @@
-import Slider from "./VerticalSlider/Slider.vue"
+// import VerticalSlider from "./VerticalSlider/Slider.vue"
 
-export default Slider
+// export const verticalSlider = VerticalSlider
+
+export { default as VerticalSlider } from "./VerticalSlider/Slider.vue"

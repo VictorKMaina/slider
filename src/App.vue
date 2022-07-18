@@ -1,9 +1,7 @@
 <template>
-
-<slider></slider>
-
+    <VerticalSlider />
 </template>
 
 <script setup>
-import slider from '../dist/slider.es';
+import { VerticalSlider } from "./components/index";
 </script>
