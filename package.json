@@ -12,6 +12,9 @@
     }
   },
   "version": "1.0.1",
+  "publishConfig": {
+    "@victormainak:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
