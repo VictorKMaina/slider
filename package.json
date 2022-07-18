@@ -1,5 +1,5 @@
 {
-  "name": "@VictorKMaina/vue-slider",
+  "name": "@victormainak/vue-slider",
   "files": [
     "dist"
   ],
@@ -12,9 +12,6 @@
     }
   },
   "version": "1.0.1",
-  "publishConfig": {
-    "@VictorKMaina:registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
